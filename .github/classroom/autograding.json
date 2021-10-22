@@ -1,0 +1,64 @@
+{
+  "tests": [
+    {
+      "name": "Test 1",
+      "setup": "",
+      "run": "cmatrix -V",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 2",
+      "setup": "",
+      "run": "cat ghc-version.txt",
+      "input": "",
+      "output": "The Glorious Glasgow Haskell Compilation System, version 9.0.1",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 3",
+      "setup": "",
+      "run": "CNT=$(wc -l < push.log); test -f .github/workflows/log-push.yml && test $CNT -gt 0 && test $CNT -eq \"$(git log --oneline | grep \"log push\" | wc -l)\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 4",
+      "setup": "",
+      "run": "find . -newermt '5 seconds ago' -type f -print | grep task04-result",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test 5",
+      "setup": "",
+      "run": "gh auth login --with-token < token.txt; gh issue list --mention sloboegen98 | grep \"Task 05\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test 6",
+      "setup": "",
+      "run": "task06-exec/hello",
+      "input": "",
+      "output": "Hello from task06",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    }
+  ]
+}

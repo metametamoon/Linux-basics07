@@ -1,0 +1,14 @@
+name: GitHub Log Date Workflow
+on: [push]
+jobs:
+  build:
+    name: Log date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0git remote add origin https://github.com/metametamoon/Linux-basics07.git
+      - run: date > push.log
+      - run: git add push.log
+      - run: git commit -m "log push"
+      - run: git push

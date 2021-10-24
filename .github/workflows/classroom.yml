@@ -5,6 +5,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "TODO"
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+      run: cd task06 && make install && cd ..
+      uses: actions/upload-artifact@v2
+        with:
+          name: compiled
+          path: task06-exec/hello
   build:
     name: Autograding
     runs-on: ubuntu-latest
@@ -18,4 +27,8 @@ jobs:
       - uses: ./.github/actions/task-04
         with:
           filename: "task04-result"
+          - name: Download math result for job 1
+        uses: actions/download-artifact@v2
+        with:
+          name: compiled
       - uses: education/autograding@v1

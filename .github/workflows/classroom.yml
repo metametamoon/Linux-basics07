@@ -32,5 +32,5 @@ jobs:
         with:
           name: compiled
           path: task06-exec/
-      - run: cd task06-exec && ls && cd ..
+      - run: cd task06-exec && cmod a+rwx && cd ..
       - uses: education/autograding@v1

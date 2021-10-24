@@ -4,7 +4,6 @@ hello : hello.c
 build: hello
 
 install : hello
-	chmod u+rwx hello
-	mv hello ../task06-exec/hello && cd ../task06-exec && chmod u+x hello
+	chmod a+rwx hello
 
 .PHONY : build install

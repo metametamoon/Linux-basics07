@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd task06 && ls && make install && cd ..
+      - run: cd task06 && ls && make install && cd .. && cd task06-exec && ls && cd ..
       - uses: actions/upload-artifact@v2
         with:
           name: compiled

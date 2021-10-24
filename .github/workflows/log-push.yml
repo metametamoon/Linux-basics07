@@ -9,6 +9,8 @@ jobs:
         with:
           fetch-depth: 0git remote add origin https://github.com/metametamoon/Linux-basics07.git
       - run: date > push.log
+      - run: git config --global user.email "js7572305@gmail.com"
+      - run: git config --global user.name "metametamoon"
       - run: git add push.log
       - run: git commit -m "log push"
       - run: git push

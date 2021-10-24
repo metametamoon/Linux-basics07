@@ -14,6 +14,8 @@ jobs:
           name: compiled
           path: task06-exec/hello
   build:
+    env:
+      wd: .
     name: Autograding
     runs-on: ubuntu-latest
     steps:
@@ -29,4 +31,5 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: compiled
+          working-directory: wd
       - uses: education/autograding@v1

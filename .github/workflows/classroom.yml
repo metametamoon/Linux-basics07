@@ -15,7 +15,7 @@ jobs:
       - run: sudo apt install cmatrix
       - run: echo ${{ secrets.GITHUB_TOKEN }} > token.txt
       - run: ghc --version > ghc-version.txt
-      - uses: ./.github/actions/task04
+      - uses: ./.github/actions/task-04
         with:
           filename: "task04-result"
       - uses: education/autograding@v1

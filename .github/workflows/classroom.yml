@@ -8,14 +8,13 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: cd task06 && make install && cd ..
       - uses: actions/upload-artifact@v2
         with:
           name: compiled
           path: task06-exec/hello
   build:
-    env:
-      wd: .
     name: Autograding
     runs-on: ubuntu-latest
     steps:
@@ -31,5 +30,4 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: compiled
-          working-directory: wd
       - uses: education/autograding@v1

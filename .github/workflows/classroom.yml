@@ -8,11 +8,11 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
-      run: cd task06 && make install && cd ..
-      uses: actions/upload-artifact@v2
-      with:
-        name: compiled
-        path: task06-exec/hello
+      - run: cd task06 && make install && cd ..
+      - uses: actions/upload-artifact@v2
+        with:
+          name: compiled
+          path: task06-exec/hello
   build:
     name: Autograding
     runs-on: ubuntu-latest

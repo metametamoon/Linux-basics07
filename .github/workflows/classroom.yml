@@ -26,7 +26,7 @@ jobs:
       - uses: ./.github/actions/task-04
         with:
           filename: "task04-result"
-        uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v2
         with:
           name: compiled
       - uses: education/autograding@v1

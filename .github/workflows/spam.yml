@@ -4,8 +4,10 @@ jobs:
   init:
     name: Create issue
     runs-on: ubuntu-latest
+    env:
+      script_path: ./.github/scripts
     steps:
-      - run: ./.github/scripts/issus.sh
+      - run: ${{ env.script_path }}/issus.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.html_url }}

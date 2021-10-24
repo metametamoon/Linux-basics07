@@ -12,5 +12,5 @@ jobs:
       - run: git config --global user.email "js7572305@gmail.com"
       - run: git config --global user.name "metametamoon"
       - run: git add push.log
-      - run: git commit -m "log push"
+      - run: git commit -m "\"log push\""
       - run: git push

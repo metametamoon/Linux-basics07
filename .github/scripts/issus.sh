@@ -1,0 +1,1 @@
+if [[ ! gh issue list --search "Task 05" ]]

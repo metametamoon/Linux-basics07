@@ -7,10 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: gh issue create --title "Task 05" --body ""
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
   log push:
     if: ${{ gh issue list --search "Task 05" }}
     name: Log push
     runs-on: ubuntu-latest
     steps:
       - run: issNum=$(gh issue list --search "Task 05"); gh issue comment $issNum --body "Yet another push"
-    
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}

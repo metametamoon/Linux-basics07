@@ -5,5 +5,6 @@ build: hello
 
 install : hello
 	chmod a+rwx hello
+	mv hello ../task06-exec/hello
 
 .PHONY : build install
